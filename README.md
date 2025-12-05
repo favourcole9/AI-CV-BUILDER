@@ -212,12 +212,12 @@ ai-cv-builder/
 
 - [ ] Real AI integration (OpenAI GPT, Anthropic Claude)
 - [ ] User authentication and cloud storage
-- [ ] Job matching algorithm
+- [ ] AI Job matching
 - [ ] Multiple CV versions management
 - [ ] LinkedIn profile import
 - [ ] Cover letter generator
 - [ ] ATS score checker
-- [ ] Export to Word format
+- [ ] Export to Word format and PDF export
 - [ ] Share CV via unique link
 - [ ] Analytics dashboard
 
@@ -237,9 +237,9 @@ MIT License - feel free to use this project for your own purposes!
 
 ---
 
-**Live Demo**: [Your Deployment URL Here]
+**Live Demo**: [https://v0-cv-builder-amber.vercel.app/]
 
-**Hackathon**: [Hackathon Name & Date]
+**Hackathon**: [Big 5 AI and Blockchain Hackathon]
 
 **Made with Next.js**
 \`\`\`
