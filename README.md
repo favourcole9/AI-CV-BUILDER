@@ -1,4 +1,4 @@
-# AI CV Builder & Job Matcher 🚀
+# AI Powered CV Builder & Job Matcher 
 
 > Transform your career journey with AI-powered CV creation and intelligent job matching.
 
@@ -7,7 +7,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-## 🎯 The Problem
+## The Problem
 
 Job seekers face three major challenges:
 
@@ -15,7 +15,7 @@ Job seekers face three major challenges:
 2. **ATS Compatibility Issues** - 75% of CVs are rejected by Applicant Tracking Systems
 3. **Generic Content** - Most CVs lack compelling, achievement-focused language
 
-## 💡 Our Solution
+##  Our Solution
 
 AI CV Builder revolutionizes CV creation with:
 
@@ -25,38 +25,38 @@ AI CV Builder revolutionizes CV creation with:
 - **Smart Customization** - Color themes and template options for personal branding
 - **One-Click Export** - Download print-ready PDFs immediately
 
-## ✨ Key Features
+##  Key Features
 
-### 🤖 Intelligent AI Assistant
+###  Intelligent AI Assistant
 - Context-aware suggestions for each CV section
 - Professional phrasing and achievement-focused language
 - Quick action buttons for common enhancements
 - Continuous conversation support
 
-### 📝 Comprehensive CV Builder
+###  Comprehensive CV Builder
 - **7 Essential Sections**: Personal Info, Experience, Education, Skills, Certifications, Projects, Links
 - **Dynamic Form Fields**: Add multiple entries for experience, education, and projects
 - **Real-Time Preview**: See changes instantly in the live preview panel
 - **Auto-Save**: Never lose your progress with automatic localStorage backup
 
-### 🎨 Professional Templates
+###  Professional Templates
 - **3 Beautiful Designs**: Modern, Professional, and Minimal
 - **Customizable Colors**: Primary, secondary, and accent color pickers
 - **ATS-Friendly Formatting**: Optimized for Applicant Tracking Systems
 - **Responsive Design**: Perfect on desktop, tablet, and mobile
 
-### 💾 Export & Save
+###  Export & Save
 - **PDF Export**: Print-ready PDFs with one click (Ctrl+P or Export button)
 - **Progress Saving**: Manual and automatic save to localStorage
 - **Design Persistence**: Saved colors and template preferences
 
-### 📱 Mobile-First Design
+###  Mobile-First Design
 - Fully responsive layout for all screen sizes
 - Touch-friendly buttons and inputs
 - Mobile preview panel with smooth animations
 - Collapsible sections for better mobile UX
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js 18+ installed
@@ -127,7 +127,7 @@ AI CV Builder revolutionizes CV creation with:
 - **Storage**: LocalStorage (client-side)
 - **AI**: Mock AI responses (no API keys needed for demo)
 
-## 📂 Project Structure
+##  Project Structure
 
 \`\`\`
 ai-cv-builder/
@@ -154,26 +154,26 @@ ai-cv-builder/
     └── AISimulator.js           # Mock AI functions
 \`\`\`
 
-## 🎨 Features Breakdown
+##  Features Breakdown
 
-### ✅ Fully Implemented
-- ✨ AI chatbot with context-aware responses
-- 📝 All 7 CV sections with full CRUD operations
-- 🎨 3 professional templates with customization
-- 💾 Auto-save and manual save functionality
-- 📄 PDF export via browser print
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- 🎯 Real-time preview updates
-- 🎨 Color customization with persistence
-- 🚀 Onboarding walkthrough for new users
-- 🔐 Login modal (UI demo)
+###  Fully Implemented
+-  AI chatbot with context-aware responses
+-  All 7 CV sections with full CRUD operations
+-  3 professional templates with customization
+-  Auto-save and manual save functionality
+-  PDF export via browser print
+-  Fully responsive design (mobile, tablet, desktop)
+-  Real-time preview updates
+-  Color customization with persistence
+-  Onboarding walkthrough for new users
+-  Login modal (UI demo)
 
-### 🎯 Demo Features (For Hackathon)
+###  Demo Features (For Hackathon)
 - AI responses use mock data (no API required)
 - Login authentication is UI-only (no backend)
 - All data stored in browser localStorage
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Landing Page
 ![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/18296a857eb53037e4646b7fee1d07b395c986e2/landing.png.jpeg)
@@ -184,14 +184,14 @@ ai-cv-builder/
 *Real-time editing with live preview panel*
 
 ### Template Selection
-![Templates](./docs/screenshots/templates.png)
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/deac41b7ea2ed94a1ca6be920e7208608ef664e8/templates.png.jpeg)
 *3 professional, ATS-friendly templates*
 
 ### AI Assistant
 ![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/6013c01b0041cd224f812089addb9ee50438d028/chatbot.png.jpeg)
 *Intelligent suggestions for every section*
 
-## 🏆 Hackathon Highlights
+##  Hackathon Highlights
 
 ### Innovation
 - **AI-First Approach**: Every section enhanced by intelligent suggestions
@@ -208,7 +208,7 @@ ai-cv-builder/
 - **Performance**: Optimized rendering, lazy loading, efficient state management
 - **Code Quality**: Clean architecture, reusable components, TypeScript types
 
-## 🌟 Future Enhancements
+##  Future Enhancements
 
 - [ ] Real AI integration (OpenAI GPT, Anthropic Claude)
 - [ ] User authentication and cloud storage
@@ -221,15 +221,15 @@ ai-cv-builder/
 - [ ] Share CV via unique link
 - [ ] Analytics dashboard
 
-## 👥 Team
+##  Team
 
-Built with ❤️ for the hackathon by passionate developers who believe in making job hunting easier for everyone.
+Built with love for the hackathon by passionate developers who believe in making job hunting easier for everyone.
 
-## 📄 License
+##  License
 
 MIT License - feel free to use this project for your own purposes!
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Icons from Heroicons
 - UI components from shadcn/ui
@@ -241,7 +241,7 @@ MIT License - feel free to use this project for your own purposes!
 
 **Hackathon**: [Hackathon Name & Date]
 
-**Made with Next.js and lots of coffee ☕**
+**Made with Next.js**
 \`\`\`
 
 ```css file="" isHidden
