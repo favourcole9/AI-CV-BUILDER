@@ -92,7 +92,7 @@ AI CV Builder revolutionizes CV creation with:
 4. **Open in Browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📖 How to Use
+##  How to Use
 
 ### 1. **Navigate to Builder**
    - Click "Start Building" on the homepage or "Build CV" in the navigation
