@@ -81,6 +81,26 @@ export default function Navbar() {
               Build CV
             </Link>
             <Link
+              href="/shortlist"
+              className={`font-medium text-sm lg:text-base transition-all ${
+                isActive("/shortlist")
+                  ? "text-indigo-600 border-b-2 border-indigo-600"
+                  : "text-gray-700 hover:text-indigo-600"
+              }`}
+            >
+              Shortlist
+            </Link>
+            <Link
+              href="/job-matcher"
+              className={`font-medium text-sm lg:text-base transition-all ${
+                isActive("/job-matcher")
+                  ? "text-indigo-600 border-b-2 border-indigo-600"
+                  : "text-gray-700 hover:text-indigo-600"
+              }`}
+            >
+              Job Matcher
+            </Link>
+            <Link
               href="/templates"
               className={`font-medium text-sm lg:text-base transition-all ${
                 isActive("/templates")
@@ -159,6 +179,22 @@ export default function Navbar() {
               }`}
             >
               Build
+            </Link>
+            <Link
+              href="/shortlist"
+              className={`text-xs font-medium px-3 py-2 rounded-md transition-all ${
+                isActive("/shortlist") ? "text-indigo-600 bg-indigo-50" : "text-gray-700"
+              }`}
+            >
+              Shortlist
+            </Link>
+            <Link
+              href="/job-matcher"
+              className={`text-xs font-medium px-3 py-2 rounded-md transition-all ${
+                isActive("/job-matcher") ? "text-indigo-600 bg-indigo-50" : "text-gray-700"
+              }`}
+            >
+              Matcher
             </Link>
             {isAuthenticated && (
               <Link
