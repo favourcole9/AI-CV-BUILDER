@@ -188,7 +188,7 @@ ai-cv-builder/
 *3 professional, ATS-friendly templates*
 
 ### AI Assistant
-![AI Chatbot](./docs/screenshots/chatbot.png)
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/6013c01b0041cd224f812089addb9ee50438d028/chatbot.png.jpeg)
 *Intelligent suggestions for every section*
 
 ## 🏆 Hackathon Highlights
