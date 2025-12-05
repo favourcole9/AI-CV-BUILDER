@@ -118,7 +118,7 @@ AI CV Builder revolutionizes CV creation with:
    - Click "Export PDF" to download your CV
    - Use the fullscreen button (desktop) for a larger preview
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
