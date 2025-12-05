@@ -176,7 +176,7 @@ ai-cv-builder/
 ## 📸 Screenshots
 
 ### Landing Page
-![Landing Page](./docs/screenshots/landing.png)
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/18296a857eb53037e4646b7fee1d07b395c986e2/landing.png.jpeg)
 *Beautiful glassmorphism design with gradient accents*
 
 ### CV Builder
