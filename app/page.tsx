@@ -48,49 +48,41 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-20 sm:pt-24 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100/80 backdrop-blur-sm border border-indigo-200/50 text-indigo-700 text-sm font-medium mb-6 animate-fade-in">
-              <SparklesIcon className="w-4 h-4" />
+          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-indigo-100/80 backdrop-blur-sm border border-indigo-200/50 text-indigo-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-fade-in">
+              <SparklesIcon className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>Powered by Advanced AI</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-balance leading-tight">
               <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent animate-gradient">
                 Your Dream Job is One Click Away
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-balance">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto text-balance px-4">
               Create a professional, ATS-friendly CV with AI. Stand out from the crowd and land your dream job faster.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/build">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+              <Link href="/builder" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-6 text-lg shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 transition-all"
+                  className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 transition-all"
                 >
                   Start Building
-                  <SparklesIcon className="w-5 h-5 ml-2" />
+                  <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-indigo-200 hover:bg-indigo-50 px-8 py-6 text-lg bg-transparent"
-              >
-                Try Demo
-                <ZapIcon className="w-5 h-5 ml-2" />
-              </Button>
             </div>
           </div>
 
           {/* Hero Illustration - Glass Card with Shimmer */}
-          <div className="relative max-w-3xl mx-auto mt-16">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl blur-3xl opacity-20 animate-pulse-slow"></div>
-            <div className="relative backdrop-blur-xl bg-white/40 rounded-3xl border border-white/40 shadow-2xl p-8 overflow-hidden">
+          <div className="relative max-w-3xl mx-auto mt-10 sm:mt-12 md:mt-16">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl opacity-20 animate-pulse-slow"></div>
+            <div className="relative backdrop-blur-xl bg-white/40 rounded-2xl sm:rounded-3xl border border-white/40 shadow-2xl p-4 sm:p-6 md:p-8 overflow-hidden">
               {/* Shimmer effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
 
@@ -135,27 +127,27 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 sm:mb-4">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               Powerful Features
             </span>
           </h2>
-          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-sm sm:text-base text-gray-600 mb-10 sm:mb-12 md:mb-16 max-w-2xl mx-auto px-4">
             Everything you need to create the perfect CV that gets you noticed by recruiters and ATS systems.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {/* Feature 1 */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-              <div className="relative backdrop-blur-xl bg-white/40 rounded-2xl border border-white/40 p-8 hover:shadow-2xl transition-all hover:-translate-y-1">
-                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30">
-                  <SparklesIcon className="w-7 h-7 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl sm:rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative backdrop-blur-xl bg-white/40 rounded-xl sm:rounded-2xl border border-white/40 p-6 sm:p-8 hover:shadow-2xl transition-all hover:-translate-y-1">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-indigo-500/30">
+                  <SparklesIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">AI Writing Assistance</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900">AI Writing Assistance</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Let AI craft compelling bullet points and descriptions that showcase your experience and skills
                   perfectly.
                 </p>
@@ -164,13 +156,13 @@ export default function Home() {
 
             {/* Feature 2 */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-              <div className="relative backdrop-blur-xl bg-white/40 rounded-2xl border border-white/40 p-8 hover:shadow-2xl transition-all hover:-translate-y-1">
-                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30">
-                  <FileTextIcon className="w-7 h-7 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl sm:rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative backdrop-blur-xl bg-white/40 rounded-xl sm:rounded-2xl border border-white/40 p-6 sm:p-8 hover:shadow-2xl transition-all hover:-translate-y-1">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-indigo-500/30">
+                  <FileTextIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">ATS-Friendly Formatting</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900">ATS-Friendly Formatting</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Our templates are optimized to pass through Applicant Tracking Systems with ease, ensuring your CV
                   gets seen.
                 </p>
@@ -179,13 +171,13 @@ export default function Home() {
 
             {/* Feature 3 */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-              <div className="relative backdrop-blur-xl bg-white/40 rounded-2xl border border-white/40 p-8 hover:shadow-2xl transition-all hover:-translate-y-1">
-                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30">
-                  <DownloadIcon className="w-7 h-7 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl sm:rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <div className="relative backdrop-blur-xl bg-white/40 rounded-xl sm:rounded-2xl border border-white/40 p-6 sm:p-8 hover:shadow-2xl transition-all hover:-translate-y-1">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-indigo-500/30">
+                  <DownloadIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">One-Click PDF Export</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-gray-900">One-Click PDF Export</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   Download your professionally formatted CV as a PDF instantly. No hassle, no waiting, just perfect
                   results.
                 </p>
@@ -196,11 +188,11 @@ export default function Home() {
       </section>
 
       {/* Demo Animation Section */}
-      <section className="py-20 px-4">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl blur-3xl opacity-20"></div>
-            <div className="relative backdrop-blur-xl bg-white/40 rounded-3xl border border-white/40 shadow-2xl p-12 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl sm:rounded-3xl blur-2xl sm:blur-3xl opacity-20"></div>
+            <div className="relative backdrop-blur-xl bg-white/40 rounded-2xl sm:rounded-3xl border border-white/40 shadow-2xl p-6 sm:p-8 md:p-12 overflow-hidden">
               <div className="flex items-center gap-2 mb-8">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -256,19 +248,21 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-4 border-t border-gray-200/50 backdrop-blur-xl bg-white/30">
+      <footer className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 border-t border-gray-200/50 backdrop-blur-xl bg-white/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <div className="flex items-center gap-2 font-bold text-xl mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <FileTextIcon className="w-5 h-5 text-white" />
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
+            <div className="col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-2 font-bold text-lg sm:text-xl mb-3 sm:mb-4">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                  <FileTextIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                   AI CV Builder
                 </span>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">Build professional CVs with the power of AI</p>
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                Build professional CVs with the power of AI
+              </p>
             </div>
 
             <div>
@@ -280,7 +274,7 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/build" className="hover:text-indigo-600 transition-colors">
+                  <Link href="/builder" className="hover:text-indigo-600 transition-colors">
                     Build CV
                   </Link>
                 </li>
@@ -359,7 +353,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-gray-200/50 text-center text-gray-600 text-sm">
+          {/* Footer Text */}
+          <div className="pt-6 sm:pt-8 border-t border-gray-200/50 text-center text-gray-600 text-xs sm:text-sm">
             <p>&copy; 2025 AI CV Builder. All rights reserved.</p>
           </div>
         </div>

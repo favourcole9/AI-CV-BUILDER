@@ -2,11 +2,13 @@
 
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { useState } from "react"
+import { useAuth } from "@/lib/auth-context"
 
 interface LoginModalProps {
   isOpen: boolean
   onClose: () => void
-  onLoginSuccess: () => void
 }
 
 const GoogleIcon = () => (
@@ -30,28 +32,56 @@ const GoogleIcon = () => (
   </svg>
 )
 
-export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginModalProps) {
+export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
+  const { login } = useAuth()
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+
   const handleGoogleSignIn = () => {
-    // Mock Google Sign-In for demo
-    setTimeout(() => {
-      onLoginSuccess()
+    if (name && email) {
+      login(email, name)
       onClose()
-    }, 500)
+      setName("")
+      setEmail("")
+    }
   }
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center">Login Placeholder</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-center">Sign In</DialogTitle>
           <DialogDescription className="text-center pt-2">
-            This will connect to Google Sign-In in production.
+            Sign in to save and access your CVs from anywhere
           </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-4 py-4">
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Full Name</label>
+            <Input
+              type="text"
+              placeholder="John Doe"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium">Email</label>
+            <Input
+              type="email"
+              placeholder="john@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full"
+            />
+          </div>
+
           <Button
             onClick={handleGoogleSignIn}
+            disabled={!name || !email}
             className="w-full bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 shadow-sm h-12 text-base font-medium"
           >
             <GoogleIcon />
@@ -68,14 +98,8 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }: LoginMod
           </div>
 
           <p className="text-sm text-gray-500 text-center">
-            In the full version, this will authenticate with Google OAuth and create a secure user session.
+            This is a demo. In production, this would connect to Google OAuth.
           </p>
-        </div>
-
-        <div className="flex justify-center">
-          <Button onClick={onClose} variant="outline" className="w-full bg-transparent">
-            Close
-          </Button>
         </div>
       </DialogContent>
     </Dialog>

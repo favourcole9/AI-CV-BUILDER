@@ -218,3 +218,73 @@
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
 }
+
+/* Adding print styles for PDF export */
+@media print {
+  /* Hide navigation and UI elements */
+  nav,
+  .print\:hidden,
+  button,
+  [role="button"] {
+    display: none !important;
+  }
+
+  /* Ensure CV preview takes full page */
+  body {
+    background: white !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Optimize for A4 printing */
+  @page {
+    size: A4;
+    margin: 0.5cm;
+  }
+
+  /* Make CV content full width */
+  #preview,
+  .cv-template {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Remove background effects */
+  .bg-gradient-to-br,
+  .backdrop-blur-xl,
+  .bg-white\/40 {
+    background: white !important;
+  }
+
+  /* Ensure text is black for printing */
+  * {
+    color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide animations */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Prevent page breaks inside sections */
+  .cv-section,
+  .experience-item,
+  .education-item,
+  .project-item {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Add page break after certain sections if needed */
+  .page-break-after {
+    page-break-after: always;
+    break-after: always;
+  }
+}

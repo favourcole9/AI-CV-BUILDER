@@ -1,6 +1,10 @@
 import { TemplateModern } from "./template-modern"
 import { TemplateProfessional } from "./template-professional"
 import { TemplateMinimal } from "./template-minimal"
+import { TemplateTraditional } from "./template-traditional"
+import { TemplateChronological } from "./template-chronological"
+import { TemplateFunctional } from "./template-functional"
+import { TemplateCombination } from "./template-combination"
 import type { CVData, CVColors } from "@/app/builder/page"
 
 interface Field {
@@ -31,6 +35,14 @@ export function TemplateWrapper({ cvData, activeTemplate, colors }: TemplateWrap
         return <TemplateProfessional cvData={cvData} colors={colors} />
       case "minimal":
         return <TemplateMinimal cvData={cvData} colors={colors} />
+      case "traditional":
+        return <TemplateTraditional cvData={cvData} colors={colors} />
+      case "chronological":
+        return <TemplateChronological cvData={cvData} colors={colors} />
+      case "functional":
+        return <TemplateFunctional cvData={cvData} colors={colors} />
+      case "combination":
+        return <TemplateCombination cvData={cvData} colors={colors} />
       default:
         return <TemplateModern cvData={cvData} colors={colors} />
     }

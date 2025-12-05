@@ -6,27 +6,41 @@ interface TemplateSelectorProps {
 }
 
 const templates = [
-  { id: "modern", name: "Modern" },
-  { id: "professional", name: "Professional" },
-  { id: "minimal", name: "Minimal" },
+  { id: "modern", name: "Modern", description: "Clean two-column header with structured sections" },
+  { id: "professional", name: "Professional", description: "Classic layout with sidebar and main content" },
+  { id: "minimal", name: "Minimal", description: "Simple and elegant with maximum whitespace" },
+  { id: "traditional", name: "Traditional", description: "Classic centered format for conservative industries" },
+  { id: "chronological", name: "Chronological", description: "Timeline-based emphasizing work history" },
+  { id: "functional", name: "Functional", description: "Skills-focused with compact experience" },
+  { id: "combination", name: "Combination", description: "Hybrid of chronological and functional styles" },
 ]
 
 export function TemplateSelector({ activeTemplate, onTemplateChange }: TemplateSelectorProps) {
   return (
-    <div className="flex items-center gap-3 mb-4">
-      <span className="text-sm font-medium text-gray-700">Template:</span>
-      <div className="flex gap-2">
+    <div className="mb-4 space-y-3">
+      <div className="flex items-center gap-2">
+        <span className="text-sm font-medium text-gray-700">Select Template:</span>
+        <span className="text-xs text-gray-500">({templates.length} available)</span>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
         {templates.map((template) => (
           <button
             key={template.id}
             onClick={() => onTemplateChange(template.id)}
-            className={`px-4 py-2 rounded-lg border cursor-pointer text-sm font-medium transition-all ${
+            className={`p-3 rounded-lg border-2 cursor-pointer text-left transition-all hover:shadow-md ${
               activeTemplate === template.id
-                ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                : "border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                ? "border-indigo-500 bg-indigo-50 shadow-md"
+                : "border-gray-200 bg-white hover:border-indigo-300"
             }`}
           >
-            {template.name}
+            <div
+              className="font-semibold text-sm mb-1"
+              style={{ color: activeTemplate === template.id ? "#4f46e5" : "#374151" }}
+            >
+              {template.name}
+            </div>
+            <div className="text-xs text-gray-600 line-clamp-2">{template.description}</div>
+            {activeTemplate === template.id && <div className="mt-2 text-xs font-medium text-indigo-600">✓ Active</div>}
           </button>
         ))}
       </div>
