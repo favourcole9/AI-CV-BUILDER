@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Navbar from "@/components/navbar"
+import Chatbot from "@/components/chatbot"
 
 const SparklesIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,38 +45,7 @@ const ZapIcon = ({ className }: { className?: string }) => (
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/20">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 font-bold text-xl">
-            <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <FileTextIcon className="w-5 h-5 text-white" />
-            </div>
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              AI CV Builder
-            </span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
-              Home
-            </Link>
-            <Link href="/build" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
-              Build CV
-            </Link>
-            <Link href="#" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
-              Templates
-            </Link>
-            <Link href="#" className="text-gray-700 hover:text-indigo-600 transition-colors font-medium">
-              Contact
-            </Link>
-          </div>
-
-          <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white">
-            Login
-          </Button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
@@ -393,6 +364,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Chatbot Component */}
+      <Chatbot />
     </div>
   )
 }

@@ -1,4 +1,7 @@
 import { TemplateModern } from "./template-modern"
+import { TemplateProfessional } from "./template-professional"
+import { TemplateMinimal } from "./template-minimal"
+import type { CVData, CVColors } from "@/app/builder/page"
 
 interface Field {
   id: string
@@ -14,17 +17,22 @@ interface SectionData {
 }
 
 interface TemplateWrapperProps {
-  sectionsData: SectionData[]
+  cvData: CVData
   activeTemplate: string
+  colors: CVColors // Added colors prop
 }
 
-export function TemplateWrapper({ sectionsData, activeTemplate }: TemplateWrapperProps) {
+export function TemplateWrapper({ cvData, activeTemplate, colors }: TemplateWrapperProps) {
   const renderTemplate = () => {
     switch (activeTemplate) {
       case "modern":
-        return <TemplateModern sectionsData={sectionsData} />
+        return <TemplateModern cvData={cvData} colors={colors} />
+      case "professional":
+        return <TemplateProfessional cvData={cvData} colors={colors} />
+      case "minimal":
+        return <TemplateMinimal cvData={cvData} colors={colors} />
       default:
-        return <TemplateModern sectionsData={sectionsData} />
+        return <TemplateModern cvData={cvData} colors={colors} />
     }
   }
 
