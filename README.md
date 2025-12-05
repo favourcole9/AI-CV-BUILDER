@@ -180,7 +180,7 @@ ai-cv-builder/
 *Beautiful glassmorphism design with gradient accents*
 
 ### CV Builder
-![CV Builder](./docs/screenshots/builder.png)
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/fd70dcc7122aba931ae476e0fd9338adba269c87/builder.png.jpeg)
 *Real-time editing with live preview panel*
 
 ### Template Selection
