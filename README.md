@@ -173,7 +173,7 @@ ai-cv-builder/
 (Insert screenshot here)
 ![AI Assistant](screenshots/assistant.png)
 
-5. Contact
+5. Shortlist Page
 
 (Insert screenshot here)
 ![PDF Export](screenshots/export.png)
