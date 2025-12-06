@@ -216,7 +216,7 @@ CV share link
 
 ## Team
 
-Built by Favour
+Built by Favour Cole
 
 Big 5 AI & Blockchain Hackathon — AI Category
 2025
