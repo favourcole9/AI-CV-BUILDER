@@ -155,28 +155,24 @@ ai-cv-builder/
 ## Screenshots
 1. Landing Page
 
-(Insert screenshot here)
-![Landing Page](screenshots/landing.png)
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/abf17e6e761d70e2f1c5af35506a0782da324663/landing%20page.jpeg)]
 
 2. CV Builder
 
-(Insert screenshot here)
-![CV Builder](screenshots/builder.png)
+![image alt(image_url)]
 
 3. Template Selection
 
-(Insert screenshot here)
-![Templates](screenshots/templates.png)
+ ![image alt(image_url)]
 
-4. Job Matcher
+5. Job Matcher
 
-(Insert screenshot here)
-![AI Assistant](screenshots/assistant.png)
+![image alt(image_url)]
+
 
 5. Shortlist Page
 
-(Insert screenshot here)
-![PDF Export](screenshots/export.png)
+![image alt(image_url)]
 
 ## Hackathon Highlights
 Innovation
