@@ -1,247 +1,233 @@
-# AI CV Builder & Job Matcher 🚀
+## AI CV Builder & Job Matcher 
 
-> Transform your career journey with AI-powered CV creation and intelligent job matching.
+A fully functional AI-powered platform that helps job seekers create professional CVs and assists employers with transparent, qualification-based shortlisting.
 
-![AI CV Builder](https://img.shields.io/badge/Status-Hackathon%20Ready-success?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
+Built for the Big 5 AI & Blockchain Hackathon (MoCTI) — AI Category.
 
-## 🎯 The Problem
+## Overview
 
-Job seekers face three major challenges:
+The AI CV Builder & Job Matcher is an accessible, mobile-friendly platform designed to solve two major national challenges:
 
-1. **Time-Consuming CV Creation** - Crafting professional CVs from scratch takes hours
-2. **ATS Compatibility Issues** - 75% of CVs are rejected by Applicant Tracking Systems
-3. **Generic Content** - Most CVs lack compelling, achievement-focused language
+Youth unemployment caused by weak CVs.
 
-## 💡 Our Solution
+Slow, biased, manual screening by employers.
 
-AI CV Builder revolutionizes CV creation with:
+This tool empowers job seekers to create strong, structured CVs and gives employers a transparent qualification-based shortlisting system.
 
-- **AI-Powered Writing Assistant** - Generate professional content with one click
-- **ATS-Optimized Templates** - Pre-designed formats that pass screening systems
-- **Real-Time Preview** - See your CV update instantly as you type
-- **Smart Customization** - Color themes and template options for personal branding
-- **One-Click Export** - Download print-ready PDFs immediately
+## The Problem
 
-## ✨ Key Features
+Job seekers and employers face serious challenges:
 
-### 🤖 Intelligent AI Assistant
-- Context-aware suggestions for each CV section
-- Professional phrasing and achievement-focused language
-- Quick action buttons for common enhancements
-- Continuous conversation support
+**For Job Seekers**
 
-### 📝 Comprehensive CV Builder
-- **7 Essential Sections**: Personal Info, Experience, Education, Skills, Certifications, Projects, Links
-- **Dynamic Form Fields**: Add multiple entries for experience, education, and projects
-- **Real-Time Preview**: See changes instantly in the live preview panel
-- **Auto-Save**: Never lose your progress with automatic localStorage backup
+ CV writing takes hours
 
-### 🎨 Professional Templates
-- **3 Beautiful Designs**: Modern, Professional, and Minimal
-- **Customizable Colors**: Primary, secondary, and accent color pickers
-- **ATS-Friendly Formatting**: Optimized for Applicant Tracking Systems
-- **Responsive Design**: Perfect on desktop, tablet, and mobile
+ Weak grammar or formatting reduces chances
 
-### 💾 Export & Save
-- **PDF Export**: Print-ready PDFs with one click (Ctrl+P or Export button)
-- **Progress Saving**: Manual and automatic save to localStorage
-- **Design Persistence**: Saved colors and template preferences
+ Many CVs fail ATS (Applicant Tracking Systems)
 
-### 📱 Mobile-First Design
-- Fully responsive layout for all screen sizes
-- Touch-friendly buttons and inputs
-- Mobile preview panel with smooth animations
-- Collapsible sections for better mobile UX
+ Lack of guidance on what employers want
 
-## 🚀 Getting Started
+**For Employers**
 
-### Prerequisites
-- Node.js 18+ installed
-- Modern web browser (Chrome, Firefox, Safari, Edge)
+ Hundreds of CVs to read manually
 
-### Installation
+ Bias and human error in shortlisting
 
-1. **Clone or Download the Project**
-   \`\`\`bash
-   # If you have the ZIP file
-   unzip ai-cv-builder.zip
-   cd ai-cv-builder
-   \`\`\`
+ Slow screening slows hiring
 
-2. **Install Dependencies**
-   \`\`\`bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   \`\`\`
+## Our Solution
 
-3. **Run Development Server**
-   \`\`\`bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   \`\`\`
+A practical AI web application that provides:
 
-4. **Open in Browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+✔ AI-powered CV writing
 
-## 📖 How to Use
+✔ Real-time preview
 
-### 1. **Navigate to Builder**
-   - Click "Start Building" on the homepage or "Build CV" in the navigation
+✔ ATS-ready templates
 
-### 2. **Fill Your Information**
-   - Select a section from the left sidebar (Personal Info, Experience, etc.)
-   - Fill in the form fields - all inputs update the preview in real-time
-   - Use "Add Another" buttons to add multiple entries for Experience, Education, etc.
+✔ PDF export
 
-### 3. **Enhance with AI**
-   - Click the chatbot button (bottom-right corner)
-   - Ask the AI to enhance any section: "Enhance my experience" or "Improve my skills"
-   - Use quick action buttons for common enhancements
+✔ AI chat guidance
 
-### 4. **Customize Design**
-   - Open "Design Settings" in the preview panel
-   - Choose from 3 professional templates (Modern, Professional, Minimal)
-   - Customize colors with the color pickers
-   - Click "Save Design" to persist your preferences
+✔ Employer shortlisting (coming next)
 
-### 5. **Export Your CV**
-   - Click "Save Progress" to save your data locally
-   - Click "Export PDF" to download your CV
-   - Use the fullscreen button (desktop) for a larger preview
+## Key Features
+ AI Assistant
 
-## 🛠 Tech Stack
+Improves grammar & wording
 
-- **Framework**: Next.js 16 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4.0
-- **UI Components**: shadcn/ui
-- **Storage**: LocalStorage (client-side)
-- **AI**: Mock AI responses (no API keys needed for demo)
+Writes bullet points & statements
 
-## 📂 Project Structure
+Provides professional phrasing
 
-\`\`\`
+Gives suggestions for each section
+
+## Complete CV Builder
+
+Personal Info
+
+Experience
+
+Education
+
+Skills
+
+Certifications
+
+Projects
+
+Links
+
+✔ Add multiple entries
+
+✔ Real-time preview
+
+✔ Auto-save to browser
+
+## Professional Templates
+
+3 Ready-to-Use Templates:
+
+Modern
+
+Professional
+
+Minimal
+
+All templates are:
+
+✔ ATS-friendly
+
+✔ Customizable (colors & layout)
+
+## Export & Save
+
+Export CV as PDF
+
+Save progress automatically
+
+Fullscreen preview
+
+Print-ready formatting
+
+Works perfectly on small screens
+
+Touch-friendly
+
+Collapsible editing sections
+
+Clean navigation
+
+## Tech Stack
+Layer	Technology
+
+Framework	Next.js 16
+
+Language	TypeScript
+
+Styling	Tailwind CSS 4
+
+UI	shadcn/ui
+
+Storage	LocalStorage
+
+AI	Mock AI (no API keys needed)
+
+## Project Structure
 ai-cv-builder/
 ├── app/
-│   ├── page.tsx                 # Landing page
-│   ├── builder/page.tsx         # CV builder page
-│   ├── templates/page.tsx       # Templates showcase
-│   ├── contact/page.tsx         # Contact page
-│   └── layout.tsx               # Root layout
+│   ├── page.tsx              # Landing
+│   ├── builder/page.tsx      # Haupt CV builder
+│   ├── templates/page.tsx    # Template selector
+│   └── layout.tsx
 ├── components/
-│   ├── navbar.tsx               # Navigation bar
-│   ├── chatbot.tsx              # AI assistant
-│   ├── section-editor.tsx       # Form editor
-│   ├── template-selector.tsx    # Template chooser
-│   ├── onboarding-overlay.tsx   # User onboarding
-│   ├── templates/               # CV templates
-│   │   ├── template-modern.tsx
-│   │   ├── template-professional.tsx
-│   │   └── template-minimal.tsx
-│   └── ui/                      # shadcn components
+│   ├── navbar.tsx
+│   ├── chatbot.tsx
+│   ├── section-editor.tsx
+│   ├── template-selector.tsx
+│   ├── templates/
+│   └── ui/
 ├── hooks/
-│   └── useOnboarding.ts         # Onboarding logic
-└── lib/
-    └── AISimulator.js           # Mock AI functions
-\`\`\`
+├── lib/
+└── public/
 
-## 🎨 Features Breakdown
+## Screenshots
+1. Landing Page
 
-### ✅ Fully Implemented
-- ✨ AI chatbot with context-aware responses
-- 📝 All 7 CV sections with full CRUD operations
-- 🎨 3 professional templates with customization
-- 💾 Auto-save and manual save functionality
-- 📄 PDF export via browser print
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- 🎯 Real-time preview updates
-- 🎨 Color customization with persistence
-- 🚀 Onboarding walkthrough for new users
-- 🔐 Login modal (UI demo)
+(Insert screenshot here)
+![Landing Page](screenshots/landing.png)
 
-### 🎯 Demo Features (For Hackathon)
-- AI responses use mock data (no API required)
-- Login authentication is UI-only (no backend)
-- All data stored in browser localStorage
+2. CV Builder
 
-## 📸 Screenshots
+(Insert screenshot here)
+![CV Builder](screenshots/builder.png)
 
-### Landing Page
-![Landing Page](./docs/screenshots/landing.png)
-*Beautiful glassmorphism design with gradient accents*
+3. Template Selection
 
-### CV Builder
-![CV Builder](./docs/screenshots/builder.png)
-*Real-time editing with live preview panel*
+(Insert screenshot here)
+![Templates](screenshots/templates.png)
 
-### Template Selection
-![Templates](./docs/screenshots/templates.png)
-*3 professional, ATS-friendly templates*
+4. Job Matcher
 
-### AI Assistant
-![AI Chatbot](./docs/screenshots/chatbot.png)
-*Intelligent suggestions for every section*
+(Insert screenshot here)
+![AI Assistant](screenshots/assistant.png)
 
-## 🏆 Hackathon Highlights
+5. Contact
 
-### Innovation
-- **AI-First Approach**: Every section enhanced by intelligent suggestions
-- **Real-Time Collaboration**: Instant preview updates as you type
-- **Zero Configuration**: No API keys, no backend setup needed for demo
+(Insert screenshot here)
+![PDF Export](screenshots/export.png)
 
-### User Experience
-- **Intuitive Interface**: Clean, modern design with guided onboarding
-- **Mobile-Optimized**: Works perfectly on any device
-- **Accessibility**: Keyboard navigation, screen reader support
+## Hackathon Highlights
+Innovation
 
-### Technical Excellence
-- **Modern Stack**: Next.js 16, TypeScript, Tailwind CSS 4
-- **Performance**: Optimized rendering, lazy loading, efficient state management
-- **Code Quality**: Clean architecture, reusable components, TypeScript types
+AI-supported writing
 
-## 🌟 Future Enhancements
+Real-time CV generation
 
-- [ ] Real AI integration (OpenAI GPT, Anthropic Claude)
-- [ ] User authentication and cloud storage
-- [ ] Job matching algorithm
-- [ ] Multiple CV versions management
-- [ ] LinkedIn profile import
-- [ ] Cover letter generator
-- [ ] ATS score checker
-- [ ] Export to Word format
-- [ ] Share CV via unique link
-- [ ] Analytics dashboard
+Zero backend needed for prototype
 
-## 👥 Team
+Employer shortlisting feature in development
 
-Built with ❤️ for the hackathon by passionate developers who believe in making job hunting easier for everyone.
+Impact
 
-## 📄 License
+Helps graduates build professional CVs
 
-MIT License - feel free to use this project for your own purposes!
+Supports employers with transparent hiring
 
-## 🙏 Acknowledgments
+Reduces bias in job screening
 
-- Icons from Heroicons
-- UI components from shadcn/ui
-- Inspiration from modern CV builders and design systems
+Helps Sierra Leone’s digital transformation goals
 
----
+## Future Enhancements
 
-**Live Demo**: [Your Deployment URL Here]
+Real AI integration (OpenAI, Claude, etc.)
 
-**Hackathon**: [Hackathon Name & Date]
+Full employer shortlisting
 
-**Made with Next.js and lots of coffee ☕**
-\`\`\`
+User login & cloud saves
 
-```css file="" isHidden
+ATS scoring
+
+Cover letter generator
+
+LinkedIn import
+
+Multiple CV versions
+
+CV share link
+
+## Team
+
+Built by Favour
+
+Big 5 AI & Blockchain Hackathon — AI Category
+2025
+
+## Live Demo
+
+👉 https://v0-cv-builder-amber.vercel.app/
+
+## Hackathon
+
+Big 5 AI & Blockchain Hackathon (MoCTI & Christex Foundation)
