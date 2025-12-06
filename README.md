@@ -172,7 +172,7 @@ ai-cv-builder/
 
 5. Shortlist Page
 
-![image alt(image_url)]
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/942f7bf32a31b45fbccacf1837c44782c6e56c7b/shortlist%20page.jpeg)]
 
 ## Hackathon Highlights
 Innovation
