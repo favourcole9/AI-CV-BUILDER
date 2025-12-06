@@ -153,6 +153,7 @@ ai-cv-builder/
 └── public/
 
 ## Screenshots
+
 1. Landing Page
 
 ![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/abf17e6e761d70e2f1c5af35506a0782da324663/landing%20page.jpeg)
@@ -163,9 +164,9 @@ ai-cv-builder/
 
 3. Template Selection
 
- ![image alt](image_url)
+ ![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/f7c0c1592ef1e40994dffb2c7af4d07f98ccc155/template%20page.jpeg)
 
-5. Job Matcher
+4. Job Matcher
 
 ![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/2be29dca465fde04df06620c8670e912333a3762/job%20matcher%20page.jpeg)
 
