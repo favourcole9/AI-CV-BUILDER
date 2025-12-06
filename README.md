@@ -155,24 +155,24 @@ ai-cv-builder/
 ## Screenshots
 1. Landing Page
 
-![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/abf17e6e761d70e2f1c5af35506a0782da324663/landing%20page.jpeg)]
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/abf17e6e761d70e2f1c5af35506a0782da324663/landing%20page.jpeg)
 
 2. CV Builder
 
-![image alt(image_url)]
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/10a70fa25620f762825c614e98e0e9bb098471ad/cv%20builder%20page.jpeg)
 
 3. Template Selection
 
- ![image alt(image_url)]
+ ![image alt](image_url)
 
 5. Job Matcher
 
-![image alt(image_url)]
+![image alt](image_url)
 
 
 5. Shortlist Page
 
-![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/942f7bf32a31b45fbccacf1837c44782c6e56c7b/shortlist%20page.jpeg)]
+![image alt](https://github.com/favourcole9/AI-CV-BUILDER/blob/942f7bf32a31b45fbccacf1837c44782c6e56c7b/shortlist%20page.jpeg)
 
 ## Hackathon Highlights
 Innovation
