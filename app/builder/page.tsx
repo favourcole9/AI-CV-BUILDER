@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
 import Navbar from "@/components/navbar"
@@ -72,7 +72,7 @@ const Save = ({ className }: { className?: string }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+      d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4m0 0h-4m4 0l-5 5M4 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
     />
   </svg>
 )
@@ -105,13 +105,24 @@ const Check = ({ className }: { className?: string }) => (
   </svg>
 )
 
+const DownloadIcon = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5m5 5v-4m0 4h-4"
+    />
+  </svg>
+)
+
 const Download = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5m5 5v-4m0 4h-4"
     />
   </svg>
 )
@@ -122,7 +133,7 @@ const Maximize = ({ className }: { className?: string }) => (
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
-      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+      d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5m5 5v-4m0 4h-4"
     />
   </svg>
 )
@@ -197,6 +208,9 @@ export default function BuilderPage() {
   const [cvName, setCvName] = useState("")
 
   const { isOnboardingOpen, closeOnboarding } = useOnboarding()
+
+  const previewRef = useRef<HTMLDivElement>(null)
+  const [isDownloading, setIsDownloading] = useState(false)
 
   useEffect(() => {
     const savedCVData = localStorage.getItem("cvBuilderData")
@@ -276,11 +290,81 @@ export default function BuilderPage() {
     }
   }
 
-  const exportToPDF = async () => {
-    // For now, use browser print which works well across devices
-    // In production, you could add html2pdf.js or jsPDF for more control
-    if (typeof window !== "undefined") {
-      window.print()
+  const downloadPDF = async () => {
+    if (!previewRef.current) return
+
+    setIsDownloading(true)
+
+    try {
+      // Dynamically import html2pdf.js
+      const html2pdf = (await import("html2pdf.js")).default
+
+      // Clone the element to avoid modifying the original
+      const element = previewRef.current.cloneNode(true) as HTMLElement
+
+      // Convert all oklch colors to hex format for PDF compatibility
+      const convertOklchToHex = (element: HTMLElement) => {
+        const allElements = element.querySelectorAll("*")
+
+        allElements.forEach((el) => {
+          const htmlEl = el as HTMLElement
+          const computedStyle = window.getComputedStyle(htmlEl)
+
+          // Convert background color
+          const bgColor = computedStyle.backgroundColor
+          if (bgColor && bgColor !== "rgba(0, 0, 0, 0)") {
+            htmlEl.style.backgroundColor = bgColor
+          }
+
+          // Convert text color
+          const textColor = computedStyle.color
+          if (textColor) {
+            htmlEl.style.color = textColor
+          }
+
+          // Convert border colors
+          const borderColor = computedStyle.borderColor
+          if (borderColor && borderColor !== "rgba(0, 0, 0, 0)") {
+            htmlEl.style.borderColor = borderColor
+          }
+        })
+
+        // Set inline styles for the container
+        element.style.backgroundColor = "#ffffff"
+        element.style.width = "210mm"
+        element.style.minHeight = "297mm"
+        element.style.padding = "40px"
+      }
+
+      convertOklchToHex(element)
+
+      const opt = {
+        margin: 0,
+        filename: "my_cv.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: {
+          scale: 2,
+          useCORS: true,
+          letterRendering: true,
+          scrollY: 0,
+          scrollX: 0,
+          backgroundColor: "#ffffff",
+        },
+        jsPDF: {
+          unit: "mm",
+          format: "a4",
+          orientation: "portrait",
+          compress: true,
+        },
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+      }
+
+      await html2pdf().set(opt).from(element).save()
+    } catch (error) {
+      console.error("PDF download failed:", error)
+      alert("Failed to download PDF. Please try again.")
+    } finally {
+      setIsDownloading(false)
     }
   }
 
@@ -325,7 +409,7 @@ export default function BuilderPage() {
               <span className="sm:hidden">{isSaved ? "Saved!" : "Save"}</span>
             </Button>
             <Button
-              onClick={exportToPDF}
+              onClick={downloadPDF}
               className="gap-1 sm:gap-2 bg-indigo-600 hover:bg-indigo-700 text-xs sm:text-sm px-2 sm:px-4 h-8 sm:h-10"
             >
               <Download className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -425,6 +509,31 @@ export default function BuilderPage() {
 
         <div id="preview" className="hidden lg:block overflow-y-auto bg-gray-100">
           <div className="p-4 md:p-6">
+            <div className="mb-6">
+              <button
+                onClick={downloadPDF}
+                disabled={isDownloading}
+                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 
+                  text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl 
+                  transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]
+                  backdrop-blur-sm border border-white/20
+                  flex items-center justify-center gap-3 text-lg
+                  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {isDownloading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Generating PDF...</span>
+                  </>
+                ) : (
+                  <>
+                    <DownloadIcon className="w-6 h-6" />
+                    <span>Download CV</span>
+                  </>
+                )}
+              </button>
+            </div>
+
             <div className="mb-3 sm:mb-4 bg-white/80 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-sm">
               <button
                 onClick={() => setShowDesignPanel(!showDesignPanel)}
@@ -535,7 +644,9 @@ export default function BuilderPage() {
             <div id="template-selector">
               <TemplateSelector activeTemplate={activeTemplate} onTemplateChange={setActiveTemplate} />
             </div>
-            <TemplateWrapper cvData={cvData} activeTemplate={activeTemplate} colors={cvColors} />
+            <div ref={previewRef}>
+              <TemplateWrapper cvData={cvData} activeTemplate={activeTemplate} colors={cvColors} />
+            </div>
           </div>
         </div>
       </div>

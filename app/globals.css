@@ -288,3 +288,56 @@
     break-after: always;
   }
 }
+
+/* PDF Export Optimization Styles */
+.cv-template {
+  /* Ensure proper rendering in html2pdf.js */
+  position: relative;
+  background: white;
+  box-sizing: border-box;
+}
+
+.cv-template * {
+  box-sizing: border-box;
+}
+
+/* Ensure images render properly in PDF */
+.cv-template img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optimize text rendering for PDF */
+.cv-template p,
+.cv-template h1,
+.cv-template h2,
+.cv-template h3,
+.cv-template h4,
+.cv-template h5,
+.cv-template h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* Prevent content overflow in PDF */
+.cv-template .overflow-hidden {
+  overflow: visible;
+}
+
+/* Ensure proper spacing between sections */
+.cv-section {
+  margin-bottom: 1.5rem;
+}
+
+/* Mobile responsive styles for Download button */
+@media (max-width: 1024px) {
+  .download-cv-mobile {
+    position: fixed;
+    bottom: 5rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 50;
+  }
+}

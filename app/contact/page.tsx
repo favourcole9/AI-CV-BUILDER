@@ -161,7 +161,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Phone</h3>
                     <a href="tel:+1234567890" className="text-indigo-600 hover:text-indigo-700 transition-colors">
-                      +1 (234) 567-890
+                      +23212345677
                     </a>
                   </div>
                 </div>
@@ -175,9 +175,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Office</h3>
                     <p className="text-gray-600">
-                      123 Tech Street
+                      Freetown
                       <br />
-                      San Francisco, CA 94103
+                      Sierra Leone
                     </p>
                   </div>
                 </div>

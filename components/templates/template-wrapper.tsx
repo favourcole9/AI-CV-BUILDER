@@ -23,7 +23,7 @@ interface SectionData {
 interface TemplateWrapperProps {
   cvData: CVData
   activeTemplate: string
-  colors: CVColors // Added colors prop
+  colors: CVColors
 }
 
 export function TemplateWrapper({ cvData, activeTemplate, colors }: TemplateWrapperProps) {
@@ -49,6 +49,15 @@ export function TemplateWrapper({ cvData, activeTemplate, colors }: TemplateWrap
   }
 
   return (
-    <div className="w-[210mm] min-h-[297mm] bg-white shadow-lg p-10 rounded-lg mx-auto my-8">{renderTemplate()}</div>
+    <div
+      className="w-full max-w-[210mm] min-h-[297mm] bg-white shadow-lg rounded-lg mx-auto my-8 overflow-hidden cv-template"
+      style={{
+        width: "210mm",
+        minHeight: "297mm",
+        margin: "0 auto",
+      }}
+    >
+      <div className="w-full h-full p-8 md:p-10 lg:p-12">{renderTemplate()}</div>
+    </div>
   )
 }
