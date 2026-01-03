@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useSearchParams } from "next/navigation"
 import { useAuth } from "@/lib/auth-context"
+import { useRouter } from "next/navigation"
 import Navbar from "@/components/navbar"
 import { SectionEditor } from "@/components/section-editor"
 import { TemplateWrapper } from "@/components/templates/template-wrapper"
@@ -140,7 +141,8 @@ const Maximize = ({ className }: { className?: string }) => (
 
 export default function BuilderPage() {
   const searchParams = useSearchParams()
-  const { isAuthenticated, saveCV, loadCV } = useAuth()
+  const router = useRouter()
+  const { isAuthenticated, isLoading, saveCV, loadCV } = useAuth()
 
   const [cvData, setCvData] = useState<CVData>({
     personalInfo: {
@@ -211,6 +213,7 @@ export default function BuilderPage() {
 
   const previewRef = useRef<HTMLDivElement>(null)
   const [isDownloading, setIsDownloading] = useState(false)
+  const [showAuthPrompt, setShowAuthPrompt] = useState(false)
 
   useEffect(() => {
     const savedCVData = localStorage.getItem("cvBuilderData")
@@ -258,6 +261,21 @@ export default function BuilderPage() {
     }
   }, [searchParams, isAuthenticated, loadCV])
 
+  useEffect(() => {
+    if (!isAuthenticated) {
+      setShowAuthPrompt(true)
+    }
+  }, [isAuthenticated])
+
+  useEffect(() => {
+    if (!isLoading && !isAuthenticated) {
+      const timer = setTimeout(() => {
+        router.push("/")
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+  }, [isAuthenticated, isLoading, router])
+
   const sections = [
     { id: "personalInfo", title: "Personal Info" },
     { id: "experience", title: "Experience" },
@@ -272,11 +290,8 @@ export default function BuilderPage() {
     if (isAuthenticated) {
       setShowSaveDialog(true)
     } else {
-      localStorage.setItem("cvBuilderData", JSON.stringify(cvData))
-      localStorage.setItem("cvBuilderColors", JSON.stringify(cvColors))
-      localStorage.setItem("cvBuilderTemplate", activeTemplate)
-      setIsSaved(true)
-      setTimeout(() => setIsSaved(false), 2000)
+      alert("Please sign in to save your CV")
+      setShowAuthPrompt(true)
     }
   }
 
@@ -387,9 +402,62 @@ export default function BuilderPage() {
     localStorage.removeItem("cvBuilderTemplate")
   }
 
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div className="text-center space-y-4">
+          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-purple-500 border-r-transparent"></div>
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <div className="text-center space-y-4">
+          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900">Authentication Required</h2>
+          <p className="text-gray-600">Please sign in with Google to access the CV Builder</p>
+          <p className="text-sm text-gray-500">Redirecting to home page...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <OnboardingOverlay isOpen={isOnboardingOpen} onClose={closeOnboarding} />
+
+      {showAuthPrompt && !isAuthenticated && (
+        <div className="fixed top-16 left-0 right-0 z-40 bg-yellow-50 border-b border-yellow-200 px-4 py-3">
+          <div className="container mx-auto flex items-center justify-between">
+            <p className="text-sm text-yellow-800">Sign in to save your CV and access it from any device</p>
+            <div className="flex items-center gap-2">
+              <Button
+                size="sm"
+                onClick={() => router.push("/")}
+                className="bg-indigo-600 hover:bg-indigo-700 text-white"
+              >
+                Sign In
+              </Button>
+              <Button size="sm" variant="ghost" onClick={() => setShowAuthPrompt(false)} className="text-yellow-800">
+                Dismiss
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Navbar />
 

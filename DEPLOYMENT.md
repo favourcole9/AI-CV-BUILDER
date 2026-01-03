@@ -251,4 +251,4 @@ if (typeof window !== 'undefined') {
 **Deployment takes ~5 minutes total. You're almost there!** 🚀
 \`\`\`
 
-```json file="" isHidden
+\`\`\`json file="" isHidden
