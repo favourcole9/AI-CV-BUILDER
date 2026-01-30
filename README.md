@@ -40,7 +40,7 @@ AI CV Builder revolutionizes CV creation with:
 - **Auto-Save**: Never lose your progress with automatic localStorage backup
 
 ### 🎨 Professional Templates
-- **7 Beautiful Designs**: Modern, Professional, Minimal, Traditional, Chronological, Functional, Combination
+- **3 Beautiful Designs**: Modern, Professional, and Minimal
 - **Customizable Colors**: Primary, secondary, and accent color pickers
 - **ATS-Friendly Formatting**: Optimized for Applicant Tracking Systems
 - **Responsive Design**: Perfect on desktop, tablet, and mobile
@@ -56,113 +56,67 @@ AI CV Builder revolutionizes CV creation with:
 - Mobile preview panel with smooth animations
 - Collapsible sections for better mobile UX
 
-### 🔐 Secure User Authentication
-- **Google Sign-In**: Use your Google account to save and access CVs
-- **Protected Routes**: Only authenticated users can access CV builder and dashboard
-- **Session Management**: Secure session handling with JWT tokens
-
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js 18+ installed
 - Modern web browser (Chrome, Firefox, Safari, Edge)
-- Google Cloud Platform account (for authentication)
 
 ### Installation
 
 1. **Clone or Download the Project**
-   ```bash
+   \`\`\`bash
    # If you have the ZIP file
    unzip ai-cv-builder.zip
    cd ai-cv-builder
-   ```
+   \`\`\`
 
 2. **Install Dependencies**
-   ```bash
+   \`\`\`bash
    npm install
    # or
    yarn install
    # or
    pnpm install
-   ```
+   \`\`\`
 
-3. **Set Up Google Authentication**
-   
-   Follow the detailed guide in [AUTH_SETUP.md](./AUTH_SETUP.md) or quick setup:
-   
-   a. Create a Google Cloud project at [console.cloud.google.com](https://console.cloud.google.com/)
-   
-   b. Enable Google OAuth and create credentials
-   
-   c. Copy `.env.example` to `.env.local`:
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   d. Add your credentials to `.env.local`:
-   ```env
-   NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your-generated-secret
-   GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
-   GOOGLE_CLIENT_SECRET=your-client-secret
-   ```
-   
-   e. Generate NEXTAUTH_SECRET:
-   ```bash
-   openssl rand -base64 32
-   ```
-
-4. **Run Development Server**
-   ```bash
+3. **Run Development Server**
+   \`\`\`bash
    npm run dev
    # or
    yarn dev
    # or
    pnpm dev
-   ```
+   \`\`\`
 
-5. **Open in Browser**
+4. **Open in Browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📖 How to Use
 
-### 1. **Sign In with Google**
-   - Click "Login" in the navigation bar
-   - Sign in with your Google account
-   - You'll be redirected to the CV Builder
-
-### 2. **Navigate to Builder**
+### 1. **Navigate to Builder**
    - Click "Start Building" on the homepage or "Build CV" in the navigation
 
-### 3. **Fill Your Information**
+### 2. **Fill Your Information**
    - Select a section from the left sidebar (Personal Info, Experience, etc.)
    - Fill in the form fields - all inputs update the preview in real-time
    - Use "Add Another" buttons to add multiple entries for Experience, Education, etc.
 
-### 4. **Enhance with AI**
+### 3. **Enhance with AI**
    - Click the chatbot button (bottom-right corner)
    - Ask the AI to enhance any section: "Enhance my experience" or "Improve my skills"
    - Use quick action buttons for common enhancements
 
-### 5. **Save Your CV**
-   - Click "Save Progress" to save to your account (requires sign-in)
-   - Your CVs are stored in your account and accessible from any device
-   - Access all saved CVs from the Dashboard
-
-### 6. **Export Your CV**
-   - Click "Download CV" above the preview to generate a PDF
-   - Click "Export PDF" in the top toolbar for quick access
-   - PDFs preserve all formatting and colors
-
-### 7. **Customize Design**
+### 4. **Customize Design**
    - Open "Design Settings" in the preview panel
-   - Choose from 7 professional templates (Modern, Professional, Minimal, Traditional, Chronological, Functional, Combination)
+   - Choose from 3 professional templates (Modern, Professional, Minimal)
    - Customize colors with the color pickers
    - Click "Save Design" to persist your preferences
 
-### 8. **Fullscreen Preview**
+### 5. **Export Your CV**
+   - Click "Save Progress" to save your data locally
+   - Click "Export PDF" to download your CV
    - Use the fullscreen button (desktop) for a larger preview
-   - Adjust preview size to your preference
 
 ## 🛠 Tech Stack
 
@@ -170,26 +124,21 @@ AI CV Builder revolutionizes CV creation with:
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS 4.0
 - **UI Components**: shadcn/ui
-- **Authentication**: NextAuth.js v5 with Google OAuth
-- **Storage**: LocalStorage (client-side) + Account-based persistence
-- **PDF Export**: html2pdf.js
+- **Storage**: LocalStorage (client-side)
 - **AI**: Mock AI responses (no API keys needed for demo)
 
 ## 📂 Project Structure
 
-```
+\`\`\`
 ai-cv-builder/
 ├── app/
 │   ├── page.tsx                 # Landing page
 │   ├── builder/page.tsx         # CV builder page
-│   ├── dashboard/page.tsx       # User dashboard
 │   ├── templates/page.tsx       # Templates showcase
 │   ├── contact/page.tsx         # Contact page
-│   ├── api/auth/[...nextauth]/  # NextAuth API routes
-│   └── layout.tsx               # Root layout with SessionProvider
+│   └── layout.tsx               # Root layout
 ├── components/
-│   ├── navbar.tsx               # Navigation bar with auth
-│   ├── login-modal.tsx          # Google Sign-In modal
+│   ├── navbar.tsx               # Navigation bar
 │   ├── chatbot.tsx              # AI assistant
 │   ├── section-editor.tsx       # Form editor
 │   ├── template-selector.tsx    # Template chooser
@@ -197,47 +146,72 @@ ai-cv-builder/
 │   ├── templates/               # CV templates
 │   │   ├── template-modern.tsx
 │   │   ├── template-professional.tsx
-│   │   ├── template-minimal.tsx
-│   │   ├── template-traditional.tsx
-│   │   ├── template-chronological.tsx
-│   │   ├── template-functional.tsx
-│   │   └── template-combination.tsx
+│   │   └── template-minimal.tsx
 │   └── ui/                      # shadcn components
 ├── hooks/
 │   └── useOnboarding.ts         # Onboarding logic
-├── lib/
-│   ├── AISimulator.js           # Mock AI functions
-│   └── auth-context.tsx         # Auth state management
-├── auth.ts                      # NextAuth configuration
-└── types/
-    └── next-auth.d.ts           # NextAuth type definitions
-```
+└── lib/
+    └── AISimulator.js           # Mock AI functions
+\`\`\`
 
 ## 🎨 Features Breakdown
 
 ### ✅ Fully Implemented
-- 🔐 **Real Google Authentication** via NextAuth.js
-- 💾 **Account-Based Storage** - Save CVs to your account
-- 📊 **User Dashboard** - Access all saved CVs
 - ✨ AI chatbot with context-aware responses
 - 📝 All 7 CV sections with full CRUD operations
-- 🎨 7 professional templates with customization
+- 🎨 3 professional templates with customization
 - 💾 Auto-save and manual save functionality
-- 📄 **Real PDF export** with html2pdf.js (no print dialog)
+- 📄 PDF export via browser print
 - 📱 Fully responsive design (mobile, tablet, desktop)
 - 🎯 Real-time preview updates
 - 🎨 Color customization with persistence
 - 🚀 Onboarding walkthrough for new users
-- 🔒 Protected routes for authenticated users
+- 🔐 Login modal (UI demo)
 
 ### 🎯 Demo Features (For Hackathon)
 - AI responses use mock data (no API required)
-- CV data stored with user accounts via localStorage
+- Login authentication is UI-only (no backend)
+- All data stored in browser localStorage
+
+## 📸 Screenshots
+
+### Landing Page
+![Landing Page](./docs/screenshots/landing.png)
+*Beautiful glassmorphism design with gradient accents*
+
+### CV Builder
+![CV Builder](./docs/screenshots/builder.png)
+*Real-time editing with live preview panel*
+
+### Template Selection
+![Templates](./docs/screenshots/templates.png)
+*3 professional, ATS-friendly templates*
+
+### AI Assistant
+![AI Chatbot](./docs/screenshots/chatbot.png)
+*Intelligent suggestions for every section*
+
+## 🏆 Hackathon Highlights
+
+### Innovation
+- **AI-First Approach**: Every section enhanced by intelligent suggestions
+- **Real-Time Collaboration**: Instant preview updates as you type
+- **Zero Configuration**: No API keys, no backend setup needed for demo
+
+### User Experience
+- **Intuitive Interface**: Clean, modern design with guided onboarding
+- **Mobile-Optimized**: Works perfectly on any device
+- **Accessibility**: Keyboard navigation, screen reader support
+
+### Technical Excellence
+- **Modern Stack**: Next.js 16, TypeScript, Tailwind CSS 4
+- **Performance**: Optimized rendering, lazy loading, efficient state management
+- **Code Quality**: Clean architecture, reusable components, TypeScript types
 
 ## 🌟 Future Enhancements
 
-- [ ] Cloud database integration (Supabase/Firebase)
 - [ ] Real AI integration (OpenAI GPT, Anthropic Claude)
+- [ ] User authentication and cloud storage
 - [ ] Job matching algorithm
 - [ ] Multiple CV versions management
 - [ ] LinkedIn profile import
@@ -246,94 +220,6 @@ ai-cv-builder/
 - [ ] Export to Word format
 - [ ] Share CV via unique link
 - [ ] Analytics dashboard
-- [ ] Team collaboration features
-- [ ] CV templates marketplace
-
-## 🔐 Authentication & Security
-
-This app uses **NextAuth.js v5** with Google OAuth for secure authentication:
-
-- ✅ Industry-standard OAuth 2.0 flow
-- ✅ Secure session management with JWT
-- ✅ Protected API routes
-- ✅ CSRF protection built-in
-- ✅ Secure cookie handling
-
-**Important Security Notes:**
-- Never commit `.env.local` to version control
-- Rotate NEXTAUTH_SECRET regularly in production
-- Use HTTPS in production (automatic with Vercel)
-- Keep Google OAuth credentials confidential
-
-See [AUTH_SETUP.md](./AUTH_SETUP.md) for complete setup instructions.
-
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. **Push to GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin your-repo-url
-   git push -u origin main
-   ```
-
-2. **Import to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "Import Project"
-   - Select your GitHub repository
-
-3. **Configure Environment Variables**
-   
-   In Vercel project settings → Environment Variables, add:
-   - `NEXTAUTH_URL`: Your Vercel URL (e.g., `https://your-app.vercel.app`)
-   - `NEXTAUTH_SECRET`: Generate with `openssl rand -base64 32`
-   - `GOOGLE_CLIENT_ID`: From Google Cloud Console
-   - `GOOGLE_CLIENT_SECRET`: From Google Cloud Console
-
-4. **Update Google OAuth Settings**
-   
-   In Google Cloud Console, add your Vercel URL:
-   - Authorized JavaScript origins: `https://your-app.vercel.app`
-   - Authorized redirect URIs: `https://your-app.vercel.app/api/auth/callback/google`
-
-5. **Deploy**
-   - Vercel will automatically deploy your app
-   - Your app will be live at `https://your-app.vercel.app`
-
-## 🐛 Troubleshooting
-
-### Authentication Issues
-
-**"Missing GOOGLE_CLIENT_ID" error:**
-- Ensure `.env.local` exists in project root
-- Verify environment variable names match exactly
-- Restart dev server after adding variables
-
-**"Redirect URI mismatch" error:**
-- Check authorized redirect URIs in Google Cloud Console
-- Format must be exact: `http://localhost:3000/api/auth/callback/google`
-- No trailing slashes
-
-**Session not persisting:**
-- Verify NEXTAUTH_SECRET is set
-- Clear browser cookies and try again
-- Check NEXTAUTH_URL matches current URL
-
-### PDF Export Issues
-
-**"PDF download failed" error:**
-- This usually indicates unsupported CSS properties
-- The app automatically converts colors to compatible formats
-- Try a different browser if issues persist
-
-**PDF formatting looks different:**
-- PDF export uses html2pdf.js which may render slightly differently
-- For best results, use Chrome or Edge browsers
-
-See [AUTH_SETUP.md](./AUTH_SETUP.md) for more troubleshooting tips.
 
 ## 👥 Team
 
@@ -356,3 +242,6 @@ MIT License - feel free to use this project for your own purposes!
 **Hackathon**: [Hackathon Name & Date]
 
 **Made with Next.js and lots of coffee ☕**
+\`\`\`
+
+```css file="" isHidden
