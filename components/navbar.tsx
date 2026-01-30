@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import LoginModal from "@/components/login-modal"
 import { useAuth } from "@/lib/auth-context"
-import Image from "next/image"
-import { signOut } from "next-auth/react"
 
 const FileTextIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -33,19 +31,16 @@ const UserIcon = ({ className }: { className?: string }) => (
 
 export default function Navbar() {
   const pathname = usePathname()
-  const { user, isAuthenticated } = useAuth()
+  const { user, isAuthenticated, logout } = useAuth()
   const [showLoginModal, setShowLoginModal] = useState(false)
 
   const handleAuthClick = () => {
     if (isAuthenticated) {
+      // Navigate to dashboard
       window.location.href = "/dashboard"
     } else {
       setShowLoginModal(true)
     }
-  }
-
-  const handleLogout = () => {
-    signOut({ callbackUrl: "/" })
   }
 
   const isActive = (path: string) => pathname === path
@@ -140,39 +135,28 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-2">
-            {isAuthenticated && user ? (
-              <>
-                <Button
-                  onClick={handleAuthClick}
-                  variant="outline"
-                  className="flex items-center gap-2 h-8 sm:h-10 px-2 sm:px-3 bg-transparent"
-                >
-                  {user.picture && (
-                    <Image
-                      src={user.picture || "/placeholder.svg"}
-                      alt={user.name}
-                      width={24}
-                      height={24}
-                      className="rounded-full w-5 h-5 sm:w-6 sm:h-6"
-                    />
-                  )}
-                  <span className="hidden sm:inline text-xs sm:text-sm">{user.name}</span>
-                </Button>
-                <Button
-                  onClick={handleLogout}
-                  variant="outline"
-                  size="sm"
-                  className="hidden sm:flex bg-transparent text-xs px-3 h-8"
-                >
-                  Logout
-                </Button>
-              </>
-            ) : (
+            <Button
+              onClick={handleAuthClick}
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-xs sm:text-sm px-3 sm:px-4 h-8 sm:h-10"
+            >
+              {isAuthenticated ? (
+                <>
+                  <UserIcon className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                  <span className="hidden sm:inline">{user?.name}</span>
+                  <span className="sm:hidden">Profile</span>
+                </>
+              ) : (
+                "Login"
+              )}
+            </Button>
+            {isAuthenticated && (
               <Button
-                onClick={() => setShowLoginModal(true)}
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-xs sm:text-sm px-3 sm:px-4 h-8 sm:h-10"
+                onClick={logout}
+                variant="outline"
+                size="sm"
+                className="hidden sm:flex bg-transparent text-xs px-3 h-8"
               >
-                Login
+                Logout
               </Button>
             )}
           </div>
